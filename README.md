@@ -47,7 +47,7 @@ Please check out the [WPGlobus Website](https://github.com/WPGlobus/wpglobus-for
 ## Screenshots ##
 
 ### 1. Plugin admin interface. ###
-![Plugin admin interface.](https://raw.githubusercontent.com/WPGlobus/wpglobus-for-wpbakery-visual-composer/master/assets/screenshot-1.png) ?????
+![Plugin admin interface.](https://raw.githubusercontent.com/WPGlobus/wpglobus-for-wpbakery-visual-composer/master/assets/screenshot-1.png)
 
 ## Changelog ##
 
