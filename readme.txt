@@ -10,7 +10,7 @@ License URI: https://github.com/WPGlobus/wpglobus-for-wpbakery-visual-composer/b
 
 == Description ==
 
-**WPGlobus for WPBakery Visual Composer** is an extension to the WPGlobus plugin. ????.
+**WPGlobus for WPBakery Visual Composer** is an extension to the WPGlobus plugin.
 
 > **NOTE:** You need to install and activate the [WPGlobus Multilingual Plugin](https://wordpress.org/plugins/wpglobus/) version 1.0.14 or later before installing the WPGlobus for WPBakery Visual Composer extension.
 
