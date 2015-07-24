@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: WPGlobus for WPBakery Visual Composer
- * Plugin URI: https://github.com/WPGlobus/WPGlobus-????
+ * Plugin URI: https://github.com/WPGlobus/wpglobus-for-wpbakery-visual-composer
  * Description: WPGLobus add-on for WPBakery Visual Composer 
  * Domain Path: 
  * Version: 1.0.0
