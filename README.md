@@ -6,7 +6,7 @@
 **Tested up to:** 4.2.3
 **Stable tag:** trunk  
 **License:** GPLv2
-**License URI:** https://github.com/WPGlobus/wpglobus-????/blob/master/LICENSE  
+**License URI:** https://github.com/WPGlobus/wpglobus-for-wpbakery-visual-composer/blob/master/LICENSE  
 
 ## Description ##
 
