@@ -1,12 +1,12 @@
-=== WPGlobus Composer ===
+=== WPGlobus for WPBakery Visual Composer ===
 Contributors: alexgff, tivnetinc, tivnet
 Donate link: http://www.wpglobus.com/
-Tags: globalization, i18n, international, l10n, language, localization, multilanguage, multilingual, translate, translation, WPGlobus
+Tags: globalization, i18n, international, l10n, visual composer, localization, multilanguage, multilingual, translate, translation, WPGlobus
 Requires at least: 4.0
 Tested up to: 4.2.3
 Stable tag: trunk
 License: GPLv2
-License URI: https://github.com/WPGlobus/wpglobus-?????/blob/master/LICENSE
+License URI: https://github.com/WPGlobus/wpglobus-for-wpbakery-visual-composer/blob/master/LICENSE
 
 == Description ==
 
@@ -16,16 +16,16 @@ License URI: https://github.com/WPGlobus/wpglobus-?????/blob/master/LICENSE
 
 = More info =
 
-* [WPGlobus for WPBakery Visual Composer home page](http://www.wpglobus.com/add-ons/wpglobus-????/).
-* [GitHub code repository](https://github.com/WPGlobus/wpglobus-????).
+* [WPGlobus for WPBakery Visual Composer home page](http://www.wpglobus.com/).
+* [GitHub code repository](https://github.com/WPGlobus/wpglobus-for-wpbakery-visual-composer).
 
 == Installation ==
 
 You can install this plugin directly from your WordPress dashboard:
 
 1. Go to the *Plugins* menu and click *Add New*.
-1. Search for *WPGlobus*.
-1. Click *Install Now* next to the *WPGlobus Composer* plugin.
+1. Search for *WPGlobus for WPBakery Visual Composer*.
+1. Click *Install Now* next to the *WPGlobus for WPBakery Visual Composer* plugin.
 1. Activate the plugin.
 
 Alternatively, see the guide to [Manually Installing Plugins](http://codex.wordpress.org/Managing_Plugins#Manual_Plugin_Installation).
@@ -36,19 +36,17 @@ Alternatively, see the guide to [Manually Installing Plugins](http://codex.wordp
 
 We appreciate all contributions, ideas, critique, and help.
 
-* To speed up our development, please report bugs, with reproduction steps on [WPGlobus for WPBakery Visual Composer GitHub](https://github.com/WPGlobus/wpglobus-????).
+* To speed up our development, please report bugs, with reproduction steps on [WPGlobus for WPBakery Visual Composer GitHub](https://github.com/WPGlobus/wpglobus-for-wpbakery-visual-composer).
 * Plugin and theme authors: please try WPGlobus for WPBakery Visual Composer and let us know if you find any compatibility problems.
 * Contact us directly on [WPGlobus.com](http://www.wpglobus.com/contact-us/).
 
 = More info? =
 
-Please check out the [WPGlobus Website](http://www.wpglobus.com/add-ons/wpglobus-????/) for additional information.
+Please check out the [WPGlobus Website](http://www.wpglobus.com) for additional information.
 
 == Screenshots ==
 
-1. Menu item ??.
-2. ?????.
-3. ?????.
+1. Plugin admin interface.
 
 == Changelog ==
 
