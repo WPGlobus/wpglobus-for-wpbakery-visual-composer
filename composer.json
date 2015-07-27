@@ -1,0 +1,7 @@
+{
+  "name": "wpglobus/wpglobus-for-wpbakery-visual-composer",
+  "description": "WPGlobus for WPBakery Visual Composer",
+  "type": "wordpress-plugin",
+  "license": "GPL-2.0",
+  "require": {}
+}
