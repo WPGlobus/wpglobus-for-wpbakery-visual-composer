@@ -3,7 +3,7 @@ Contributors: alexgff, tivnetinc, tivnet
 Donate link: http://www.wpglobus.com/
 Tags: globalization, i18n, international, l10n, visual composer, localization, multilanguage, multilingual, translate, translation, WPGlobus
 Requires at least: 4.0
-Tested up to: 4.2.3
+Tested up to: 4.2.4
 Stable tag: trunk
 License: GPLv2
 License URI: https://github.com/WPGlobus/wpglobus-for-wpbakery-visual-composer/blob/master/LICENSE
@@ -49,6 +49,9 @@ Please check out the [WPGlobus Website](http://www.wpglobus.com/extensions-archi
 1. Plugin admin interface.
 
 == Changelog ==
+
+= 1.0.1 =
+* FIXED: WPGlobusAdmin is not defined for WPGlobus off mode
 
 = 1.0.0 =
 * Initial release
