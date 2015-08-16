@@ -8,7 +8,7 @@
  * @subpackage Administration
  */
 /*jslint browser: true*/
-/*global jQuery, console, WPGlobusCore, WPGlobusJsComposer */
+/*global jQuery, console, WPGlobusAdmin, WPGlobusCoreData, WPGlobusJsComposer*/
 var WPGlobusJsComposer;
 
 jQuery(document).ready(function ($) {
@@ -19,6 +19,9 @@ jQuery(document).ready(function ($) {
 	
 	if ( typeof vc.app == 'undefined' )
 		return;		
+
+	if ( typeof WPGlobusAdmin == 'undefined' )
+		return;
 	
 	var content_default = WPGlobusAdmin.content,
 		content_language = WPGlobusCoreData.default_language;
