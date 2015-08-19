@@ -52,7 +52,7 @@ jQuery(document).ready(function ($) {
 			$('.postdivrich-wpglobus').css('display','block');
 			$('#postdivrich').css('display','block');
 			if ( content_language != WPGlobusCoreData.default_language ) {
-				if ( tinymce.get('content_'+content_language).isHidden() ) {
+				if ( tinymce.get('content_'+content_language) == null || tinymce.get('content_'+content_language).isHidden() ) {
 					$('#content_'+content_language).val( vc.storage.getContent() );
 				} else {
 					tinymce.get('content_'+content_language).setContent( vc.storage.getContent() );
@@ -66,7 +66,7 @@ jQuery(document).ready(function ($) {
 		if ( content_language != WPGlobusCoreData.default_language ) {
 			tinymce.get('content_'+content_language).setContent( vc.storage.getContent() );
 			tinymce.triggerSave();
-			if ( tinymce.get('content').isHidden() ) {
+			if ( tinymce.get('content') == null || tinymce.get('content').isHidden() ) {
 				$('#content').val( content_default );
 			} else {	
 				tinymce.get('content').setContent( content_default );
@@ -87,7 +87,7 @@ jQuery(document).ready(function ($) {
 			if ( otab == WPGlobusCoreData.default_language ) {
 				content_default = vc.storage.getContent();
 			} else {
-				if ( tinymce.get('content_'+otab).isHidden() ) {
+				if ( tinymce.get('content_'+otab) == null || tinymce.get('content_'+otab).isHidden() ) {
 					$('#content_'+otab).val( vc.storage.getContent() );
 				} else {	
 					tinymce.get('content_'+otab).setContent( vc.storage.getContent() );
