@@ -48,13 +48,15 @@ function wpglobus_js_composer_load() {
 			$content_types = get_option( $content_types_option );
 			
 			if ( ! empty( $content_types ) && in_array( $post->post_type, $content_types ) ) :
-			
-				$mceInit['setup'] = "function(editor) {
-					editor.on('change', function(e) {
-						WPGlobusJsComposer.change(e, editor);
-					});
-				}";
-				
+				if ( false !== strpos( $mceInit['selector'], 'content' ) ) {
+					
+					$mceInit['setup'] = "function(editor) {
+						editor.on('change', function(e) {
+							WPGlobusJsComposer.change(e, editor);
+						});
+					}";
+					
+				}	
 			endif;
 			
 			return $mceInit;
