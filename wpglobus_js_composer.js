@@ -62,7 +62,7 @@ jQuery(document).ready(function ($) {
 		}
 	});
 	
-	$(document).on( 'wpglobus_before_save_post', function(e) {
+	$(document).on( 'wpglobus_before_save_post', function(e, args) {
 		if ( content_language != WPGlobusCoreData.default_language ) {
 			tinymce.get('content_'+content_language).setContent( vc.storage.getContent() );
 			tinymce.triggerSave();
@@ -71,6 +71,11 @@ jQuery(document).ready(function ($) {
 			} else {	
 				tinymce.get('content').setContent( content_default );
 				tinymce.triggerSave();
+			}	
+			if ( typeof args != 'undefined' && typeof args.content_tabs_id != 'undefined' ) {
+				if (  $(args.content_tabs_id).size() == 1 ) {
+					$(args.content_tabs_id).tabs('option','active',0);
+				}	
 			}	
 		}
 		if ( 'tinymce' != getUserSetting('editor') ) {
