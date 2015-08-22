@@ -37,12 +37,26 @@ function wpglobus_js_composer_load() {
 		add_filter( 'tiny_mce_before_init', 'wpglobus_js_composer_tiny_mce_before_init' );
 		function wpglobus_js_composer_tiny_mce_before_init($mceInit) {
 			
-			$mceInit['setup'] = "function(editor) {
-				editor.on('change', function(e) {
-					WPGlobusJsComposer.change(e, editor);
-				});
-			}";
+			global $post;
 
+			if ( empty( $post ) ) {
+				return;	
+			}
+			
+			$content_types_option = 'wpb_js_content_types';
+
+			$content_types = get_option( $content_types_option );
+			
+			if ( ! empty( $content_types ) && in_array( $post->post_type, $content_types ) ) :
+			
+				$mceInit['setup'] = "function(editor) {
+					editor.on('change', function(e) {
+						WPGlobusJsComposer.change(e, editor);
+					});
+				}";
+				
+			endif;
+			
 			return $mceInit;
 			
 		}
