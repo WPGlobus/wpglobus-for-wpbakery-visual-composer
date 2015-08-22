@@ -51,6 +51,11 @@ Please check out the [WPGlobus Website](http://www.wpglobus.com/extensions-archi
 
 ## Changelog ##
 
+### 1.0.3 ###
+* FIXED:
+	* don't make mce init for disabled post type
+	* make mce init for id with 'content' only
+
 ### 1.0.2 ###
 * FIXED: tinymce.get(id) is null
 
