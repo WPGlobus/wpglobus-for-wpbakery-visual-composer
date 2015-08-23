@@ -40,7 +40,7 @@ function wpglobus_js_composer_load() {
 			global $post;
 
 			if ( empty( $post ) ) {
-				return;	
+				return $mceInit;	
 			}
 			
 			$content_types_option = 'wpb_js_content_types';
