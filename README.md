@@ -51,6 +51,10 @@ Please check out the [WPGlobus Website](http://www.wpglobus.com/extensions-archi
 
 ## Changelog ##
 
+### 1.0.4 ###
+* FIXED:
+	* return array with TinyMCE config from filter
+	
 ### 1.0.3 ###
 * FIXED:
 	* don't make mce init for disabled post type
