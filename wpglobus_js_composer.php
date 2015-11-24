@@ -32,40 +32,40 @@ define( 'WPGLOBUS_JS_COMPOSER_VERSION', '1.0.4' );
 add_action( 'plugins_loaded', 'wpglobus_js_composer_load', 11 );
 function wpglobus_js_composer_load() {
 	
+	if ( ! defined( 'WPB_VC_VERSION' ) ) { 
+		return;
+	}	
+	
 	if ( defined( 'WPGLOBUS_VERSION' ) ) :
 
 		add_filter( 'tiny_mce_before_init', 'wpglobus_js_composer_tiny_mce_before_init' );
 		function wpglobus_js_composer_tiny_mce_before_init($mceInit) {
-			
+
 			global $post;
 
 			if ( empty( $post ) ) {
 				return $mceInit;	
 			}
-			
-			$content_types_option = 'wpb_js_content_types';
 
-			$content_types = get_option( $content_types_option );
-			
-			if ( ! empty( $content_types ) && in_array( $post->post_type, $content_types ) ) :
-				if ( false !== strpos( $mceInit['selector'], 'content' ) ) {
+			if ( false !== strpos( $mceInit['selector'], 'content' ) ) {
 					
-					$mceInit['setup'] = "function(editor) {
-						editor.on('change', function(e) {
+				$mceInit['setup'] = "function(editor) {
+					editor.on('change', function(e) {
+						if ( typeof WPGlobusJsComposer !== 'undefined' ) { 
 							WPGlobusJsComposer.change(e, editor);
-						});
-					}";
-					
-				}	
-			endif;
+						}	
+					});
+				}";
+				
+			}	
 			
 			return $mceInit;
 			
 		}
 
-		add_action( 'admin_print_scripts', 'wpglobus_js_composer_admin_enqueue_scripts' );
+		add_action( 'admin_print_scripts', 'wpglobus_js_composer_admin_enqueue_scripts', 99 );
 		function wpglobus_js_composer_admin_enqueue_scripts() {
-
+		
 			global $post;
 			
 			if ( ! is_admin() ) {
@@ -76,27 +76,19 @@ function wpglobus_js_composer_load() {
 				return;	
 			}			
 			
-			$content_types_option = 'wpb_js_content_types';
-
-			$content_types = get_option( $content_types_option );
+			$wpglobus_composer_script_suffix = '.min';	
+			if ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) {
+				$wpglobus_composer_script_suffix = '';	
+			}	
 			
-			if ( ! empty( $content_types ) && in_array( $post->post_type, $content_types ) ) :
-			
-				$wpglobus_composer_script_suffix = '.min';	
-				if ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) {
-					$wpglobus_composer_script_suffix = '';	
-				}	
-				
-				wp_register_script(
-					'wpglobus-js-composer',
-					plugin_dir_url( __FILE__ ) . 'wpglobus_js_composer' . $wpglobus_composer_script_suffix . ".js",
-					array( 'jquery' ),
-					WPGLOBUS_JS_COMPOSER_VERSION,
-					true
-				);
-				wp_enqueue_script( 'wpglobus-js-composer' );
-				
-			endif;	
+			wp_register_script(
+				'wpglobus-js-composer',
+				plugin_dir_url( __FILE__ ) . 'wpglobus_js_composer' . $wpglobus_composer_script_suffix . ".js",
+				array( 'jquery' ),
+				WPGLOBUS_JS_COMPOSER_VERSION,
+				true
+			);
+			wp_enqueue_script( 'wpglobus-js-composer' );
 
 		}	
 
