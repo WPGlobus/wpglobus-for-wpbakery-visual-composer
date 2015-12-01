@@ -51,6 +51,10 @@ Please check out the [WPGlobus Website](http://www.wpglobus.com/extensions-archi
 
 ## Changelog ##
 
+### 1.0.6 ###
+* FIXED:
+	* cannot read property 'setContent' of null in change event for some VC versions
+
 ### 1.0.5 ###
 * FIXED:
 	* checking an option to start plugin load
