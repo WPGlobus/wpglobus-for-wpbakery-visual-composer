@@ -39,7 +39,11 @@ jQuery(document).ready(function ($) {
 	
 	$('body').on('change', '.postdivrich-wpglobus', function(event){
 		var ed = $(this).attr('id') + ' .wpglobus-editor';
-		tinymce.get('content_'+content_language).setContent( $('#'+ed).val() );
+		if ( tinymce.get('content_'+content_language) == null || tinymce.get('content_'+content_language).isHidden() ) {
+			$('#content_'+content_language).val( $('#'+ed).val() );
+		} else {	
+			tinymce.get('content_'+content_language).setContent( $('#'+ed).val() );
+		}
 		tinymce.triggerSave();
 	});
 	
