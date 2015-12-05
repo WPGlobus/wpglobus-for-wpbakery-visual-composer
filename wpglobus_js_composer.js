@@ -64,7 +64,7 @@ jQuery(document).ready(function ($) {
 							$( '#content_' + api.content_language ).val( vc.storage.getContent() );
 						} else {
 							tinymce.get( 'content_' + api.content_language ).setContent( vc.storage.getContent() );
-							tinymce.triggerSave();
+							//tinymce.triggerSave();
 						}	
 					}	
 				}
@@ -74,13 +74,18 @@ jQuery(document).ready(function ($) {
 
 				if ( api.content_language != WPGlobusCoreData.default_language ) {
 
-					$( '#content_' + api.content_language ).val( vc.storage.getContent() );
+					if ( tinymce.get( 'content_' + api.content_language ) == null || tinymce.get( 'content_' + api.content_language ).isHidden() ) {
+						$( '#content_' + api.content_language ).val( vc.storage.getContent() );
+					} else {
+						tinymce.get( 'content_' + api.content_language ).setContent( vc.storage.getContent() );
+						//tinymce.triggerSave();
+					}	
 					
 					if ( tinymce.get( 'content' ) == null || tinymce.get( 'content' ).isHidden() ) {
 						$( '#content' ).val( api.content_default );
 					} else {	
 						tinymce.get( 'content' ).setContent( api.content_default );
-						tinymce.triggerSave();
+						//tinymce.triggerSave();
 					}	
 					if ( typeof args !== 'undefined' && typeof args.content_tabs_id !== 'undefined' ) {
 						if (  $( args.content_tabs_id ).size() == 1 ) {
@@ -101,7 +106,7 @@ jQuery(document).ready(function ($) {
 
 				if ( ntab == WPGlobusCoreData.default_language ) {
 				
-					$( '#content_'+otab ).val( vc.storage.getContent() );
+					$( '#content_' + otab ).val( vc.storage.getContent() );
 					vc.storage.setContent( api.content_default );
 				
 				} else {
@@ -112,13 +117,13 @@ jQuery(document).ready(function ($) {
 
 					} else {
 						if ( tinymce.get( 'content_' + otab ) == null || tinymce.get( 'content_'+otab ).isHidden() ) {
-							$( '#content_'+otab ).val( vc.storage.getContent() );
+							$( '#content_' + otab ).val( vc.storage.getContent() );
 						} else {	
 							tinymce.get( 'content_' + otab ).setContent( vc.storage.getContent() );
-							tinymce.triggerSave();
+							//tinymce.triggerSave();
 						}					
 					}	
-					vc.storage.setContent( $( '#content_'+ntab ).val() );
+					vc.storage.setContent( $( '#content_' + ntab ).val() );
 				
 				}
 				api.content_language = ntab;
