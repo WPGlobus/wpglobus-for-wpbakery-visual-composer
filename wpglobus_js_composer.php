@@ -89,6 +89,15 @@ function wpglobus_js_composer_load() {
 				true
 			);
 			wp_enqueue_script( 'wpglobus-js-composer' );
+			
+			wp_localize_script(
+				'wpglobus-js-composer',
+				'WPGlobusJsComposer',
+				array(
+					'wpglobus_composer_version' => WPGLOBUS_JS_COMPOSER_VERSION,
+					'wpb_vc_version'  => WPB_VC_VERSION
+				)
+			);			
 
 		}	
 
