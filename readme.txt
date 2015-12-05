@@ -50,6 +50,11 @@ Please check out the [WPGlobus Website](http://www.wpglobus.com/extensions-archi
 
 == Changelog ==
 
+= 1.1.1 =
+* FIXED:
+	* disable tinymce.triggerSave()
+	* check '#content' for extra languages
+
 = 1.1.0 =
 * COMPATIBILITY:
 	* WordPress 4.4-RC1
