@@ -50,6 +50,10 @@ Please check out the [WPGlobus Website](http://www.wpglobus.com/extensions-archi
 
 == Changelog ==
 
+= 1.2.0 =
+* COMPATIBILITY:
+	* WPBakery Visual Composer from v.4.11
+	
 = 1.1.1 =
 * FIXED:
 	* disable tinymce.triggerSave()
