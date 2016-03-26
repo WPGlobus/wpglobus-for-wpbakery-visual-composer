@@ -32,7 +32,11 @@ jQuery(document).ready(function ($) {
 		},	
 		change: function(e){
 			if ( api.contentLanguage != WPGlobusCoreData.default_language ) {
-				vc.storage.setContent( e.level.content );	
+				vc.storage.setContent( e.level.content );
+				_.debounce( 
+					tinymce.get( 'content_' + api.contentLanguage ).setContent( e.level.content ),
+					500 
+				);
 			}	
 		},
 		addListeners: function(){
@@ -64,34 +68,32 @@ jQuery(document).ready(function ($) {
 							$( '#content_' + api.contentLanguage ).val( vc.storage.getContent() );
 						} else {
 							tinymce.get( 'content_' + api.contentLanguage ).setContent( vc.storage.getContent() );
-							//tinymce.triggerSave();
 						}	
 					}	
 				}
 			});	
 
+			/**
+			 * @see trigger 'wpglobus_before_save_post' in wpglobus-admin.js
+			 */			
 			$( document ).on( 'wpglobus_before_save_post', function(e, args) {
 
 				if ( api.contentLanguage != WPGlobusCoreData.default_language ) {
-
-					if ( tinymce.get( 'content_' + api.contentLanguage ) == null || tinymce.get( 'content_' + api.contentLanguage ).isHidden() ) {
-						$( '#content_' + api.contentLanguage ).val( vc.storage.getContent() );
-					} else {
-						tinymce.get( 'content_' + api.contentLanguage ).setContent( vc.storage.getContent() );
-						//tinymce.triggerSave();
-					}	
 					
 					if ( tinymce.get( 'content' ) == null || tinymce.get( 'content' ).isHidden() ) {
 						$( '#content' ).val( api.contentDefault );
+						$( '#content-tmce' ).click();
 					} else {	
 						tinymce.get( 'content' ).setContent( api.contentDefault );
-						//tinymce.triggerSave();
 					}	
+					
 					if ( typeof args !== 'undefined' && typeof args.content_tabs_id !== 'undefined' ) {
 						if (  $( args.content_tabs_id ).size() == 1 ) {
+							api.contentLanguage = WPGlobusCoreData.default_language;
 							$( args.content_tabs_id ).tabs( 'option', 'active', 0 );
-						}	
-					}	
+						}
+					}
+					
 				}
 				if ( 'tinymce' != getUserSetting( 'editor' ) ) {
 					setUserSetting( 'editor', 'tinymce' );
@@ -99,7 +101,7 @@ jQuery(document).ready(function ($) {
 				if ( tinymce.get( 'content' ) !== null ) {
 					tinymce.get( 'content' ).show();
 				}
-				
+	
 			});
 			
 			/**
@@ -113,13 +115,15 @@ jQuery(document).ready(function ($) {
 					vc.storage.setContent( $( '#content_' + nTab ).val() );
 					
 				} else {
+					
 					if ( nTab == WPGlobusCoreData.default_language ) {
 						$( '#content_' + oTab ).val( vc.storage.getContent() );
 						vc.storage.setContent( api.contentDefault );						
 					} else {
 						$( '#content_' + oTab ).val( vc.storage.getContent() );
 						vc.storage.setContent( $( '#content_' + nTab ).val() );
-					}	
+					}
+					
 				}	
 				
 				api.contentLanguage = nTab;
