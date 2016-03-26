@@ -27,16 +27,18 @@ jQuery(document).ready(function ($) {
 		contentDefault: WPGlobusAdmin.content,
 		contentLanguage: WPGlobusCoreData.default_language,
 		init: function( args ) {
-			$('.postdivrich-wpglobus').css('display','none');
+			$( '.postdivrich-wpglobus' ).css( 'display', 'none' );
 			api.addListeners();
 		},	
 		change: function(e){
 			if ( api.contentLanguage != WPGlobusCoreData.default_language ) {
 				vc.storage.setContent( e.level.content );
-				_.debounce( 
-					tinymce.get( 'content_' + api.contentLanguage ).setContent( e.level.content ),
-					500 
-				);
+				if ( ! api.classicMode ) {
+					_.debounce( 
+						tinymce.get( 'content_' + api.contentLanguage ).setContent( e.level.content ),
+						500 
+					);
+				}	
 			}	
 		},
 		addListeners: function(){
@@ -56,6 +58,7 @@ jQuery(document).ready(function ($) {
 			});
 			
 			$( document ).on( 'click', '.wpb_switch-to-composer', function(event){
+				
 				if ( $('.composer-switch').hasClass( 'vc_backend-status' ) ) {
 					api.classicMode = false;
 					$( '.postdivrich-wpglobus' ).css( 'display', 'none' );
@@ -63,14 +66,8 @@ jQuery(document).ready(function ($) {
 					api.classicMode = true;
 					$( '.postdivrich-wpglobus' ).css( 'display','block' );
 					$(  '#postdivrich').css( 'display','block' );
-					if ( api.contentLanguage != WPGlobusCoreData.default_language ) {
-						if ( tinymce.get( 'content_' + api.contentLanguage ) == null || tinymce.get( 'content_' + api.contentLanguage ).isHidden() ) {
-							$( '#content_' + api.contentLanguage ).val( vc.storage.getContent() );
-						} else {
-							tinymce.get( 'content_' + api.contentLanguage ).setContent( vc.storage.getContent() );
-						}	
-					}	
 				}
+				
 			});	
 
 			/**
@@ -79,6 +76,10 @@ jQuery(document).ready(function ($) {
 			$( document ).on( 'wpglobus_before_save_post', function(e, args) {
 
 				if ( api.contentLanguage != WPGlobusCoreData.default_language ) {
+					
+					if ( tinymce.get( 'content_' + api.contentLanguage ) == null || tinymce.get( 'content_' + api.contentLanguage ).isHidden() ) {
+						$( '#content_' + api.contentLanguage + '-tmce' ).click();
+					}
 					
 					if ( tinymce.get( 'content' ) == null || tinymce.get( 'content' ).isHidden() ) {
 						$( '#content' ).val( api.contentDefault );
