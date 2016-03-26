@@ -38,6 +38,10 @@ function wpglobus_js_composer_load() {
 	
 	if ( defined( 'WPGLOBUS_VERSION' ) ) :
 
+		if ( WPGlobus::Config()->toggle == 'off' ) {
+			return;	
+		}	
+	
 		add_filter( 'tiny_mce_before_init', 'wpglobus_js_composer_tiny_mce_before_init' );
 		function wpglobus_js_composer_tiny_mce_before_init($mceInit) {
 
