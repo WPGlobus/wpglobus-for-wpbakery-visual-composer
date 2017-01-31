@@ -16,7 +16,7 @@
 
 ### More info ###
 
-* [WPGlobus for WPBakery Visual Composer home page](http://www.wpglobus.com/extensions-archive/wpglobus-for-wpbakery-visual-composer-archive/).
+* [WPGlobus for WPBakery Visual Composer home page](https://wpglobus.com/extensions-archive/wpglobus-for-wpbakery-visual-composer-archive/).
 * [GitHub code repository](https://github.com/WPGlobus/wpglobus-for-wpbakery-visual-composer).
 
 ## Installation ##
@@ -38,11 +38,11 @@ We appreciate all contributions, ideas, critique, and help.
 
 * To speed up our development, please report bugs, with reproduction steps on [WPGlobus for WPBakery Visual Composer GitHub](https://github.com/WPGlobus/wpglobus-for-wpbakery-visual-composer).
 * Plugin and theme authors: please try WPGlobus for WPBakery Visual Composer and let us know if you find any compatibility problems.
-* Contact us directly on [WPGlobus.com](http://www.wpglobus.com/contact-us/).
+* Contact us directly on [WPGlobus.com](https://wpglobus.com/contact-us/).
 
 ### More info? ###
 
-Please check out the [WPGlobus Website](http://www.wpglobus.com/extensions-archive/wpglobus-for-wpbakery-visual-composer-archive/) for additional information.
+Please check out the [WPGlobus Website](https://wpglobus.com/extensions-archive/wpglobus-for-wpbakery-visual-composer-archive/) for additional information.
 
 ## Screenshots ##
 

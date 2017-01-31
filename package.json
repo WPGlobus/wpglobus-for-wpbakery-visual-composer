@@ -13,7 +13,7 @@
   },
   "author": "The WPGlobus Team",
   "license": "GPLv2+",
-  "homepage": "http://www.wpglobus.com/extensions-archive/wpglobus-for-wpbakery-visual-composer-archive/",
+  "homepage": "https://wpglobus.com/extensions-archive/wpglobus-for-wpbakery-visual-composer-archive/",
   "devDependencies": {
     "grunt": "^0.4.5",
     "grunt-contrib-cssmin": "^0.12.2",
