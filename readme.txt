@@ -1,6 +1,6 @@
 === WPGlobus for WPBakery Visual Composer ===
 Contributors: alexgff, tivnetinc, tivnet
-Donate link: http://www.wpglobus.com/
+Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=SLF8M4YNZHNQN
 Tags: globalization, i18n, international, l10n, visual composer, localization, multilanguage, multilingual, translate, translation, WPGlobus
 Requires at least: 4.0
 Tested up to: 4.7
@@ -57,7 +57,7 @@ Please check out the [WPGlobus Website](http://www.wpglobus.com/extensions-archi
 = 1.2.0 =
 * COMPATIBILITY:
 	* WPBakery Visual Composer from v.4.11
-	
+
 = 1.1.1 =
 * FIXED:
 	* disable tinymce.triggerSave()
@@ -69,9 +69,9 @@ Please check out the [WPGlobus Website](http://www.wpglobus.com/extensions-archi
 * ADDED:
 	* heartbeat-send.autosave event handler
 * FIXED:
-	* event 'change' in editor text mode 
+	* event 'change' in editor text mode
 	* undefined 'show' if tinymce.get('content') is null
-	
+
 = 1.0.6 =
 * FIXED:
 	* cannot read property 'setContent' of null in change event for some VC versions
@@ -79,16 +79,16 @@ Please check out the [WPGlobus Website](http://www.wpglobus.com/extensions-archi
 = 1.0.5 =
 * FIXED:
 	* checking an option to start plugin load
-	
+
 = 1.0.4 =
 * FIXED:
 	* return array with TinyMCE config from filter
-	
+
 = 1.0.3 =
-* FIXED: 
+* FIXED:
 	* don't make mce init for disabled post type
 	* make mce init for id with 'content' only
-	
+
 = 1.0.2 =
 * FIXED: tinymce.get(id) is null
 
