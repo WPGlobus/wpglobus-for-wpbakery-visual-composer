@@ -4,7 +4,7 @@
  * Plugin URI: https://github.com/WPGlobus/wpglobus-for-wpbakery-visual-composer
  * Description: WPGlobus add-on for WPBakery Visual Composer
  * Domain Path:
- * Version: 1.2.1
+ * Version: 1.3.0
  * Author: WPGlobus
  * Author URI: https://wpglobus.com/
  * Network: false
@@ -27,7 +27,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'WPGLOBUS_JS_COMPOSER_VERSION', '1.2.1' );
+define( 'WPGLOBUS_JS_COMPOSER_VERSION', '1.3.0' );
 
 add_action( 'plugins_loaded', 'wpglobus_js_composer_load', 11 );
 function wpglobus_js_composer_load() {
