@@ -2,7 +2,7 @@
  * WPGlobus Composer
  * Interface JS functions
  *
- * @since 1.2.0
+ * @since 1.3.0
  *
  * @package WPGlobus
  * @subpackage Administration
@@ -13,24 +13,29 @@
 jQuery(document).ready(function ($) {
     "use strict";
 	
-	if ( typeof window.vc == 'undefined' )
+	if ( 'undefined' === typeof window.vc ) {
 		return
+	}
 	
-	if ( typeof vc.app == 'undefined' )
-		return;		
-
-	if ( typeof WPGlobusAdmin == 'undefined' )
+	if ( 'undefined' === typeof vc.app ) {
 		return;
+	}
+
+	if ( 'undefined' === typeof WPGlobusAdmin ) {
+		return;
+	}
 
 	var api = {
 		classicMode: false,
 		contentDefault: WPGlobusAdmin.content,
 		contentLanguage: WPGlobusCoreData.default_language,
+		dLang: '',
 		init: function( args ) {
 			$( '.postdivrich-wpglobus' ).css( 'display', 'none' );
 			api.addListeners();
 		},	
 		change: function(e){
+			api.dLang = WPGlobusCoreData.default_language;
 			if ( api.contentLanguage != WPGlobusCoreData.default_language ) {
 				vc.storage.setContent( e.level.content );
 				if ( ! api.classicMode ) {
@@ -43,7 +48,7 @@ jQuery(document).ready(function ($) {
 		},
 		addListeners: function(){
 			
-			$( document ).on( 'heartbeat-send.autosave', function(e, data) {
+			$(document).on( 'heartbeat-send.autosave', function(e, data) {
 				if ( typeof data['wpglobus_heartbeat'] !== 'undefined' ) {
 					if ( api.contentLanguage != WPGlobusCoreData.default_language ) {
 						data['wp_autosave']['content'] = api.contentDefault;
@@ -51,21 +56,23 @@ jQuery(document).ready(function ($) {
 				}
 			});				
 
-			$( document ).on( 'change', '.postdivrich-wpglobus', function(event){
-				// event was fired in editor text mode 
+			$(document).on( 'change', '.postdivrich-wpglobus', function(event){
+				/**
+				 * Event was fired in editor text mode.
+				 */	
 				var ed = $(this).attr('id') + ' .wpglobus-editor';
 				vc.storage.setContent( $( '#' + ed ).val() );
 			});
 			
-			$( document ).on( 'click', '.wpb_switch-to-composer', function(event){
+			$(document).on( 'click', '.wpb_switch-to-composer', function(event){
 				
 				if ( $('.composer-switch').hasClass( 'vc_backend-status' ) ) {
 					api.classicMode = false;
 					$( '.postdivrich-wpglobus' ).css( 'display', 'none' );
 				} else {
 					api.classicMode = true;
-					$( '.postdivrich-wpglobus' ).css( 'display','block' );
-					$(  '#postdivrich').css( 'display','block' );
+					$( '.postdivrich-wpglobus' ).css( 'display', 'block' );
+					$('#postdivrich').css( 'display', 'block' );
 				}
 				
 			});	
@@ -73,7 +80,7 @@ jQuery(document).ready(function ($) {
 			/**
 			 * @see trigger 'wpglobus_before_save_post' in wpglobus-admin.js
 			 */			
-			$( document ).on( 'wpglobus_before_save_post', function(e, args) {
+			$(document).on( 'wpglobus_before_save_post', function(e, args) {
 
 				if ( api.contentLanguage != WPGlobusCoreData.default_language ) {
 					
@@ -108,7 +115,7 @@ jQuery(document).ready(function ($) {
 			/**
 			 * @see trigger 'wpglobus_post_body_tabs' in wpglobus-admin.js
 			 */
-			$( document ).on( 'wpglobus_post_body_tabs', function(e, oTab, nTab) {
+			$(document).on( 'wpglobus_post_body_tabs', function(e, oTab, nTab) {
 				
 				if ( oTab == WPGlobusCoreData.default_language ) {
 				

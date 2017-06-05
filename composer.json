@@ -1,7 +1,11 @@
 {
   "name": "wpglobus/wpglobus-for-wpbakery-visual-composer",
+  "type": "wordpress-plugin",  
   "description": "WPGlobus for WPBakery Visual Composer",
-  "type": "wordpress-plugin",
-  "license": "GPL-2.0",
-  "require": {}
+  "keywords": ["WordPress","multilingual","translate","WPGlobus","WPBakery VC"],
+  "homepage": "https://github.com/WPGlobus/wpglobus-for-wpbakery-visual-composer",  
+  "license": "GPL-3.0",
+  "require": {
+    "php": ">=5.3.0"
+  }
 }

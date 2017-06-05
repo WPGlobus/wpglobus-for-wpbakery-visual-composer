@@ -10,7 +10,7 @@
  * Network: false
  * License: GPL2
  * Credits: Alex Gor (alexgff) and Gregory Karpinsky (tivnet)
- * Copyright 2015-2016 WPGlobus
+ * Copyright 2015-2017 WPGlobus
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License, version 2, as
  * published by the Free Software Foundation.
@@ -87,7 +87,7 @@ function wpglobus_js_composer_load() {
 
 			wp_register_script(
 				'wpglobus-js-composer',
-				plugin_dir_url( __FILE__ ) . 'wpglobus_js_composer120' . $wpglobus_composer_script_suffix . ".js",
+				plugin_dir_url( __FILE__ ) . '/includes/js/wpglobus_js_composer130' . $wpglobus_composer_script_suffix . ".js",
 				array( 'jquery' ),
 				WPGLOBUS_JS_COMPOSER_VERSION,
 				true

@@ -1,0 +1,10 @@
+{
+  "text_domain": "wpglobus-for-wpbakery-vc",
+  "version": {
+    "define": "WPGLOBUS_JS_COMPOSER_VERSION"
+  },
+  "path": {
+    "dist": "/var/www/u/wpglobus.com/dist",
+    "js": "includes/js"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "default": [
+    "dist"
+  ],
+  "dist": [
+    "replace:version",
+    "uglify",
+    "compress:dist",
+    "writefile:latest_zip"
+  ]
+}
