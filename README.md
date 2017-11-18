@@ -42,7 +42,7 @@ We appreciate all contributions, ideas, critique, and help.
 
 ### More info? ###
 
-Please check out the [WPGlobus Website](https://wpglobus.com/extensions-archive/wpglobus-for-wpbakery-visual-composer-archive/) for additional information.
+Please check out the [WPGlobus Website](https://wpglobus.com/plugin-updates/wpglobus-for-wpbakery-visual-composer/) for additional information.
 
 ## Screenshots ##
 
