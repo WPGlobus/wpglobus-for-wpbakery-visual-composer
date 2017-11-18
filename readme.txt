@@ -1,9 +1,9 @@
 === WPGlobus for WPBakery Visual Composer ===
-Contributors: alexgff, tivnetinc, tivnet
+Contributors: alexgff, tivnetinc
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=SLF8M4YNZHNQN
 Tags: WPGlobus, globalization, i18n, international, visual composer, localization, multilanguage, multilingual, translate, translation
 Requires at least: 4.0
-Tested up to: 4.8
+Tested up to: 4.9
 Stable tag: trunk
 License: GPL-3.0
 License URI: http://www.gnu.org/licenses/gpl.txt
@@ -49,6 +49,12 @@ Please check out the [WPGlobus Website](https://wpglobus.com/extensions-archive/
 1. Plugin admin interface.
 
 == Changelog ==
+
+= 1.4.0 =
+* COMPATIBILITY:
+	* WordPress 4.9.
+* ADDED:
+	* added support WPBakery Page Builder (formerly Visual Composer) from v.5.4.
 
 = 1.3.0 =
 * COMPATIBILITY:
