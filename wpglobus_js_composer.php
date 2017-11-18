@@ -79,7 +79,13 @@ function wpglobus_js_composer_load() {
 			if ( empty( $post ) ) {
 				return;
 			}
-
+			
+			$version = '130';
+			
+			if ( version_compare( WPB_VC_VERSION, '5.3.9', '>' ) ) {
+				$version = '140';
+			}
+			
 			$wpglobus_composer_script_suffix = '.min';
 			if ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) {
 				$wpglobus_composer_script_suffix = '';
@@ -87,7 +93,7 @@ function wpglobus_js_composer_load() {
 
 			wp_register_script(
 				'wpglobus-js-composer',
-				plugin_dir_url( __FILE__ ) . '/includes/js/wpglobus_js_composer130' . $wpglobus_composer_script_suffix . ".js",
+				plugin_dir_url( __FILE__ ) . "/includes/js/wpglobus_js_composer$version" . $wpglobus_composer_script_suffix . ".js",
 				array( 'jquery' ),
 				WPGLOBUS_JS_COMPOSER_VERSION,
 				true
