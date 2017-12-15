@@ -40,7 +40,7 @@ jQuery(document).ready(function ($) {
 			 * We need to replicate content.
 			 * @see
 			 * vc.storage.getContent()/setContent()
-			 * tinymce.get('content').getContent()/serContent()
+			 * tinymce.get('content').getContent()/setContent()
 			 * jQuery('#content').val()
 			 *
 			 */
@@ -74,7 +74,7 @@ jQuery(document).ready(function ($) {
 				}				
 				_.debounce( 
 					api.replicateContent(content),
-					200 
+					500 
 				);
 				
 			}	
@@ -86,7 +86,18 @@ jQuery(document).ready(function ($) {
 				vc.storage.setContent(content);
 				api.changePrevented = false;
 			} else {
-				tinymce.get('content_' + api.contentLanguage).setContent(content);				
+				/**
+				 * To prevent get lost line breaks for extra languages.
+				 * @since 1.4.1
+				 */
+				if ( 1 ) {
+					/**
+					 * #content contains text in current language.
+					 */
+					tinymce.get('content_' + api.contentLanguage).setContent(tinymce.get('content').getContent());
+				} else {
+					tinymce.get('content_' + api.contentLanguage).setContent(content);	
+				}	
 			}
 		},
 		addListeners: function(){
