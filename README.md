@@ -51,6 +51,10 @@ Please check out the [WPGlobus Website](https://wpglobus.com/plugin-updates/wpgl
 
 ## Changelog ##
 
+### 1.4.1 ###
+* FIXED:
+	* Line breaks get lost for extra languages.
+
 ### 1.4.0 ###
 * COMPATIBILITY:
 	* WordPress 4.9.
