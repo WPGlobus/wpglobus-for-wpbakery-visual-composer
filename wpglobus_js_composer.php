@@ -40,6 +40,16 @@ function wpglobus_js_composer_load() {
 
 	if ( defined( 'WPGLOBUS_VERSION' ) ) :
 
+		if ( isset( WPGlobus::Config()->builder ) ) {
+		
+			/**
+			 * Exit if builder is present.
+			 * @since 1.4.2
+			 */
+			return;
+			
+		}
+		
 		if ( WPGlobus::Config()->toggle == 'off' ) {
 			return;
 		}
