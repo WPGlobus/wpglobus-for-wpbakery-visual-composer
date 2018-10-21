@@ -50,6 +50,10 @@ Please check out the [WPGlobus Website](https://wpglobus.com/plugin-updates/wpgl
 
 == Changelog ==
 
+= 1.4.2 =
+* COMPATIBILITY:
+	* WPGlobus 1.9.17
+	
 = 1.4.1 =
 * FIXED:
 	* Line breaks get lost for extra languages.
