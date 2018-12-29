@@ -51,6 +51,10 @@ Please check out the [WPGlobus Website](https://wpglobus.com/plugin-updates/wpgl
 
 ## Changelog ##
 
+### 2.0.0 ###
+* COMPATIBILITY:
+	* WordPress 5.0
+	
 ### 1.4.2 ###
 * COMPATIBILITY:
 	* WPGlobus 1.9.17
