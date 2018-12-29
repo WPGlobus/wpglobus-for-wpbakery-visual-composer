@@ -40,7 +40,8 @@ function wpglobus_js_composer_load() {
 
 	if ( defined( 'WPGLOBUS_VERSION' ) ) :
 
-		if ( isset( WPGlobus::Config()->builder ) && ! WPGlobus::Config()->builder_disabled ) {
+		//if ( isset( WPGlobus::Config()->builder ) && ! WPGlobus::Config()->builder_disabled ) {
+		if ( isset( WPGlobus::Config()->builder ) && WPGlobus::Config()->builder->is_builder_page() ) {
 
 			/**
 			 * Exit if builder is present and enabled.
