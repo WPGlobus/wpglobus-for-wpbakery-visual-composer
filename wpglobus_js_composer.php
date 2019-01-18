@@ -58,6 +58,10 @@ function wpglobus_js_composer_load() {
 		add_filter( 'tiny_mce_before_init', 'wpglobus_js_composer_tiny_mce_before_init' );
 		function wpglobus_js_composer_tiny_mce_before_init($mceInit) {
 
+			if ( empty( $mceInit['selector'] ) ) {
+				return $mceInit;
+			}		
+		
 			global $post;
 
 			if ( empty( $post ) ) {
