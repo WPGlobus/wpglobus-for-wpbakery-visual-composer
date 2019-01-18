@@ -51,6 +51,10 @@ Please check out the [WPGlobus Website](https://wpglobus.com/plugin-updates/wpgl
 
 ## Changelog ##
 
+### 2.1.0 ###
+* FIXED:
+	* PHP Notice undefined index `selector`.
+	
 ### 2.0.0 ###
 * COMPATIBILITY:
 	* WordPress 5.0
