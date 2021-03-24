@@ -2,8 +2,8 @@
 **Contributors:** alexgff, tivnetinc
 **Donate link:** https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=SLF8M4YNZHNQN  
 **Tags:** WPGlobus, globalization, i18n, international, visual composer, localization, multilanguage, multilingual, translate 
-**Requires at least:** 4.0  
-**Tested up to:** 5.6
+**Requires at least:** 5.5  
+**Tested up to:** 5.7
 **Stable tag:** trunk  
 **License:** GPL-3.0
 **License URI:** http://www.gnu.org/licenses/gpl.txt
