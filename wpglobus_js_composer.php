@@ -10,7 +10,7 @@
  * Network: false
  * License: GPL2
  * Credits: Alex Gor (alexgff) and Gregory Karpinsky (tivnet)
- * Copyright 2015-2019 WPGlobus
+ * Copyright 2015-2021 WPGlobus
  * License: GPL-3.0-or-later
  * License URI: https://spdx.org/licenses/GPL-3.0-or-later.html
  * This program is free software; you can redistribute it and/or modify
