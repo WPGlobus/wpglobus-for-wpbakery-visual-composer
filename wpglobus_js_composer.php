@@ -10,7 +10,7 @@
  * Network: false
  * License: GPL2
  * Credits: Alex Gor (alexgff) and Gregory Karpinsky (tivnet)
- * Copyright 2015-2021 WPGlobus
+ * Copyright 2015-2022 WPGlobus
  * License: GPL-3.0-or-later
  * License URI: https://spdx.org/licenses/GPL-3.0-or-later.html
  * This program is free software; you can redistribute it and/or modify
@@ -39,8 +39,15 @@ function wpglobus_js_composer_load() {
 	}
 
 	if ( defined( 'WPGLOBUS_VERSION' ) ) :
+	
+		/**
+		 * @since 2.2.0
+		 */
+		if ( is_admin() ) {
+			require 'includes/class-wpglobus-js-composer-admin.php';
+			new WPGlobus_js_composer_Admin( __FILE__ );
+		}
 
-		//if ( isset( WPGlobus::Config()->builder ) && ! WPGlobus::Config()->builder_disabled ) {
 		if ( isset( WPGlobus::Config()->builder ) && WPGlobus::Config()->builder->is_builder_page() ) {
 
 			/**
@@ -48,7 +55,6 @@ function wpglobus_js_composer_load() {
 			 * @since 1.4.2
 			 */
 			return;
-			
 		}
 		
 		if ( WPGlobus::Config()->toggle == 'off' ) {
