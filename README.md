@@ -51,7 +51,7 @@ Please check out the [WPGlobus Website](https://wpglobus.com/plugin-updates/wpgl
 
 ## Changelog ##
 
-### 2.2.0 ###
+### 2.2.1 ###
 * FIXED:
 	* Loading the post edit page in `Classic Editor` mode.
 
